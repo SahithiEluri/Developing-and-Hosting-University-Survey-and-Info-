@@ -1,0 +1,915 @@
+<!----Survey Webpage-->
+<!DOCTYPE html>
+<html style="background-color: green">
+<head>
+<title>CS Department Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/117510c07d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href=""C:\Users\Sahithi\OneDrive\Desktop\pproject -1(642)\csdeptmain.html"" type="text/css" />
+
+
+<script src="jquery-3.6.1.js"></script>
+</style><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<!---some styles+-->
+<style>
+    #dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: rgb(9, 9, 9);
+  line-height: 1.8;
+  background: rgb(253, 253, 253);
+}
+.w3-bar-block .w3-bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    color: white;
+}
+.w3-white, .w3-hover-white:hover {
+    color: #000!important;
+    background-color: #000!important;
+}
+
+/*copied part*/
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
+}
+
+  /*navbar*/
+
+br{
+    background-color: #209639;
+}
+
+</style>
+</head>
+<body style="margin:20px" onload="cookie()">
+
+    <script>
+        $( function() {
+            $( "#tabs" ).tabs();
+          } );
+    </script>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Survey</a></li>
+    <li><a href="#tabs-2">Volgenau Website</a></li>
+  </ul>
+  <div id="tabs-1">
+    <!-- Navbar (sit on top) -->
+<div class="nav-wrapper">
+    <div class="logo-container">
+        <img class="logo" src="gmulogo.jpg" alt="Logo">
+    </div>
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i> MENU
+      </a>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-tabs">
+                <li class="nav-tab"><a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-house-chimney"></i> HOME</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+  </div>
+</div>
+
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
+    <a href="csmain.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CS Department</a>
+
+  </div>
+
+<div class="gmulog">
+  <header class="w3-container ">
+    <div class="padded-row">
+        <div id="cs-logo  ">
+            <h1 class="heading">
+                <a class="img-link" href="">
+                    <img class="img-logo" src="https://cs.gmu.edu/static/images/logo.png" alt="GMU CS Department">
+                </a>
+            </h1>
+        </div>
+    </div>
+</header>
+</div>
+
+<div class="student-survey"><h1><center>Student Survey</center></h1></div>
+<div id="hello">hello</div>
+<script type = "text/javascript">
+
+    function wp(){
+      document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC;  path=/;"
+        location.reload();
+        document.execCommand("ClearAuthenticationCache");
+    }
+
+    function cookie(){
+      //get the date
+      var date=new Date();
+      //get the hour
+      var hour=date.getHours();
+      //variable to store the cookie name
+      var name;
+      //get the ID of the div element in which the message is going to be printed
+      var hello=document.getElementById("hello");
+      //Starting message
+      var greeting="<h1>Good ";
+        //check what time of day it is and append it to the message
+    if(hour<12)
+    {
+      greeting+='morning ';
+    }
+    else
+    {
+      hour=hour-12;
+      if(hour<6)
+      {
+        greeting+='afternoon ';
+      }
+      else
+      {
+        greeting+='evening ';
+      }
+    }
+    const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
+    //get the name stored in cookie
+    name=getCookie("name");
+    //if the cookie name is not empty display welcome back
+    if(name!=""){
+      //Capitalise first letter in name
+      name=name[0].toUpperCase()+name.slice(1);
+      greeting+=", Welcome back "+name+" to SWE642 Survey!</h1><br>";
+    }else//if the cookie is empty ask user to enter his name to store the users name in the cookie
+    {
+
+        name=prompt("Please Enter your name","");
+      if(name!="" && name!=null && isAlphaNumeric(name)){
+        //Capitalise first letter in name
+        name=name[0].toUpperCase()+name.slice(1);
+        setCookie("name",name);
+        greeting+=name+", Welcome to SWE642 Survey!</h1><br>";
+
+    }
+    }
+    greeting+="<a href = 'javascript:wp()'> "+ "Click Here if you are not " + name + ". " + "</a>" ;
+    //add greeting to the div element hello
+    hello.innerHTML=greeting;
+    }
+
+
+
+//from w3schools
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+//from w3schools
+function setCookie(cname, cvalue) {
+  const d = new Date();
+  d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//from w3schools
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+//from w3schools
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+}
+
+</script>
+<p class="w3-container w3-xlarge">Please fill out the Survey regarding the semester start Campus Visit </p>
+<p class="w3-container w3-xlarge">We greatly value your feedback, which will enable us to make improvements when you return.</p>
+<h3> <center>Enter Details Below</center></h3>
+
+<!---Survey Form-->
+<form class="survey" method="post" autocomplete>
+    <fieldset class="w3-container">
+        <legend>User Information</legend>
+        <table class="w3-table">
+            <tr>
+                <!--First Name-->
+                <td><label for="fname">First name:*</label><br></td>
+                <td><input type="text" id="fname" name="fname" size="20" autofocus="on" placeholder="Enter your First Name" required><br></td>
+                <td><p id="errorfname" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <!--Last Name-->
+                <td><label for="lname">Last name:*</label><br></td>
+                <td> <input type="text" id="lname" name="lname" size="20" placeholder="Enter your Last Name" required><br></td>
+                <td><p id="errorlname" style="color: red;"></p></td>
+            </tr>
+            <tr>
+                <!--GMU Username-->
+                <td><label for="username">Username:*</label><br></td>
+                <td><input type="text" id="username" name="username" size="20" placeholder="NET UID" required><br></td>
+            </tr>
+            <tr>
+                <!---GMU Mail-->
+                <td><label for="email">Enter your GMU Email:*</label><br></td>
+                <td><input type="email" id="email" name="email" placeholder="your_username@gmu.edu" required><br></td>
+            </tr>
+            <tr>
+                <!---Phone Number-->
+                <td><label for="phone">Enter your phone number:</label><br></td>
+                <td><input type="tel" id="phone" name="phone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="+1-(xxx)-xxx-xxxx"><br></td> <!----->
+            </tr>
+            <tr>
+                <!---Address-->
+                <td><label for="address">Enter your Address:</label><br></td>
+                <td><input type="text" id="address" name="address" placeholder="Address"></input><br></td>
+            </tr>
+            <tr>
+                <!---Address-->
+                <td><label for="street">Enter your Street:</label><br></td>
+                <td><input type="text" id="street" name="street" placeholder="Enter Street:"></input><br></td>
+            </tr>
+            <script>
+            function validzip() {
+
+            //get the zipcode from the input field
+            var zipcode=document.getElementById("zipcode").value;
+            //using try catch block to get catch exception if error happens
+            try {
+              // make a async request
+                var asyncRequest = new XMLHttpRequest();
+                asyncRequest.onreadystatechange = function () {
+                callBack(zipcode, asyncRequest);
+                };
+                //get the zipcodes that is stored in zipcodes.json
+                asyncRequest.open("GET", "zipcodes.json", true);
+                asyncRequest.withCredentials = true;
+                asyncRequest.send();
+                }
+                //if error happens
+                catch (exception) {
+                console("Request failed.");
+                }
+              }
+              //fucntion to check callback
+              function callBack(zipcode, asyncRequest) {
+              //tell the user that we are validating the zipcode
+              document.getElementById("ziperr").innerHTML = "Validating Zip...";
+              //setting div with city to nothing
+              document.getElementById('city').innerHTML = "";
+              //setting div with state to nothing
+              document.getElementById('state').innerHTML = "";
+              if (asyncRequest.readyState == 4) {
+                if (asyncRequest.status == 200 || asyncRequest.status == 304) {
+                  var json_data = JSON.parse(asyncRequest.responseText);
+                  //validate the zipcode
+                  result = isValid(zipcode, json_data)
+                  if (result.valid)
+                  {
+                    //set the div with city to the value from the json file
+                    document.getElementById('city').innerHTML = result.city;
+                    //set the div with state to the value from the json file
+                    document.getElementById('state').innerHTML = result.state;
+                    //set error div to nothing
+                    document.getElementById('ziperr').innerHTML = '';
+                    } else
+                    {
+                      document.getElementById("ziperr").innerHTML="Invalid Zip Code.";
+                    }
+                  }
+                }
+              }
+              //function to validate the zipcodes with what is stored in json
+              function isValid(zipcode, json_data) {
+              var zipcodes = json_data.zipcodes;
+              for (var zipCode of zipcodes) {
+                if(zipCode.zip === zipcode) {
+                  return {
+                    valid: true,
+                    city: zipCode.city,
+                    state: zipCode.state
+                    };
+                  }
+                }
+                return {
+                  valid: false
+                  };
+                }
+            </script>
+            <!---Zipcode-->
+            <tr>
+                <td><label>Zip Code</label></td>
+                <td><input id="zipcode" type="number" placeholder="try 22030 for fairfax " pattern="^\d{5}(?:[-\s]\d{4})?$" onblur="validzip()"; /><br /><label id="ziperr" style="color:red"></label></td>
+            </tr >
+            <!----City-->
+            <tr>
+                <td><label>City</label></td>
+                <td><label id="city"></label></td>
+            </tr>
+            <!----state-->
+            <tr>
+              <td><label>State</label></td>
+              <td><label id="state"></label></td>
+            </tr>
+            <!---State Code-->
+                <td><label for="country_code">State code:*</label><br></td>
+                <td><input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{2}" title="Country Code 2 Letters" max=3 placeholder="State code" required><br></td>
+            </tr>
+
+            <tr>
+                <td>
+            <!---Date-->
+                    <label for="todays_date">Enter Todays Date:</label><br></td>
+                    <td><input type="date" id="today_date" name="todays_date" max="2022-9-1" min="2022-8-19"><br></td>
+            </tr>
+            <tr>
+            <!--URL-->
+                <td> <label for="homepage">Enter your URL:</label><br></td>
+                <td><input type="url" id="homepage" name="homepage" placeholder="Your Website Address"><br></td>
+            </tr>
+</table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Feedback</legend>
+    <table class="w3-table">
+
+        <tr>
+            <!---CheckBox-->
+            <td><label for="liked_most">What did you like the most about the campus visit?*</label><br></td>
+            <td><label><input name="liked_most" type="checkbox" class="cb">Students</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Location</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Campus</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Atmosphere</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Dorm Rooms</label><br>
+                <label><input name="liked_most" type="checkbox" class="cb">Sports</label><br>
+            </td>
+            <tr>
+                <!--Radio Buttons-->
+            <td><label for="how_did">How did you hear about our University*</label><br></td>
+            <td><label><input name="how_did" type="Radio" class="rb">Friend</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Senior</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Instagram</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Television</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Internet</label><br>
+                <label><input name="how_did" type="Radio" class="cb">Other</label><br>
+                </td>
+            </tr>
+            <tr>
+                <!---Drop Down list-->
+                <td><label for="likely" id="likely" name="likely">How Likely are you going to be able to Recommend GMU to other People?*</label></td>
+                <td><select name="likely" id="likely" placeholder="Select" required>
+                    <option>Very Likely</option>
+                    <option>Likely</option>
+                    <option>Unlikely</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="w3-large">Additional Comments</p></td>
+                <td><textarea name="message" rows="4" cols="40" placeholder="Please write any comments."></textarea><br></td>
+            </tr>
+        </tr>
+    </table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Graduation Month and Year*</legend>
+    <table class="w3-table">
+        <tr>
+            <td><label for="grad-time">Please enter your graduation Month:*</label></td>
+            <td>
+                <label for="grad-month">Month:</label>
+                <input type="text" name="grad-month" id="grad-month" list="grad-list" required>
+                <datalist id="grad-list" required>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+                </datalist>
+                <br>
+                <br>
+                <label for="Year:">Year:</label>
+                <input type="text" id="year" name="year" placeholder="Enter Year" required>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<br>
+<fieldset class="w3-container">
+    <legend>Calculate Average and Maximum </legend>
+    <table class="w3-table">
+        <tr>
+            <td><label>Values:</label></td>
+            <td>
+                <input id="computation" type="text" onblur="calculate();" placeholder="Example 1,1,1,1,1,1,1,1,1,1"/>
+                <script type="text/javascript">
+                    function calculate(){
+
+                        //get the value of the input from the id computation
+                        var u_input=document.getElementById("computation").value;
+                        //split the value using , to get 10 values
+                        var arr=[];
+                        arr=u_input.split(",");
+                        console.log(arr.length)
+                        //convert to integer array
+                        var int_arr=arr.map( function(val){
+                            return parseInt(val,10);}
+                        ) ;
+
+                        //check the number of elements in the array it should be 10
+                        if(int_arr.length<10){
+                            document.getElementById("computation_error").innerHTML = "Enter at least ten values separated by commas";
+                            document.getElementById("average").innerHTML="";
+                            document.getElementById("maximum").innerHTML="";
+                            return;
+
+                        }
+                        //check if the array elements seperated by commas are between 0 to 100
+                        if((Math.max(...int_arr)>100) || Math.min(...int_arr) < 1){
+                            document.getElementById("computation_error").innerHTML = "Enter at values between 0 an 100";
+                            document.getElementById("average").innerHTML="";
+                          document.getElementById("maximum").innerHTML="";
+                          return;
+
+                        }else{
+                          document.getElementById("computation_error").innerHTML="";
+
+                          //get the maximum
+                            document.getElementById("maximum").innerHTML = "Maximum is: "+ Math.max(...int_arr);
+                            //get the average
+                            function getavgval(){
+                            var val=0;
+                            for(var i=0;i<10;i++){
+                                var val=val+int_arr[i];
+                            }
+                            var avg=val/int_arr.length;
+                            return avg;
+                            }
+                            document.getElementById("average").innerHTML = "Average is: "+ getavgval();
+                        }
+                        document.getElementById("computation").innerHTML="";
+                        arr=[]
+                        int_arr=[]
+                      }
+                </script>
+                <br />
+                <label id="computation_error" class="error" style="color:red"></label>
+            </td>
+        </tr>
+        <tr><td><label>Average</label></td>
+            <td><label id="average"></label></td>
+        </tr>
+        <tr><td><label>Maximum</label></td>
+            <td><label id="maximum"></label></td>
+        </tr>
+    </table>
+</fieldset>
+<div class="" style="height:100px"><center>
+    <br>
+
+    <script type="text/javascript">
+
+        function validateform_submit(){
+            var val=0;
+            //regular expression for alphabet
+            var alphabet=/^[A-Za-z]+$/;
+            //regular expression for address
+            var addressexp=/^[a-zA-Z0-9]+$/;
+            //regular expression for email
+            var emailexp=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}$/i
+            val=0;
+            //message if form successfully submitted
+            var messagetouser="Feed Back Submitted";
+            var error_message=""
+
+
+            //var survey=document.getElementsByClassName("survey");
+            //get the fname
+            var fname=document.getElementById("fname").value;
+            //check if first name is correct
+            if(!fname.match(alphabet))
+            {
+                error_message+="Please Enter a Valid First Name. \n";
+                document.getElementById("fname").value="";
+            }
+            //get the last name
+            var lname=document.getElementById("lname").value;
+            //check if last name is correct
+            if(!lname.match(alphabet))
+            {
+                error_message+="Please Enter a Valid Last Name. \n";
+                document.getElementById("lname").value="";
+            }
+            //get the street
+            var loc=document.getElementById("address").value;
+            //check if street is correct
+            if(!loc.match(addressexp))
+            {
+                error_message+="Please Enter a Valid Street Adress. \n";
+                document.getElementById("address").value="";
+            }
+            //check the liked count
+            var liked=document.getElementsByName("liked_most");
+            var count=0
+            for(var i=0;i<liked.length;i++){
+                if(liked[i].checked==true){
+                    count=count+1;
+                }
+            }
+            if(count<2){
+                error_message+="Please select at least 2 options for what you liked during the Event. \n";
+                for(var i=0;i<liked.length;i++){
+                    liked[i].checked=false;
+                }
+            }
+            count=0
+            // check the checked count
+            var hear=document.getElementsByName("how_did");
+            var check=false;
+            for(var i=0;i<hear.length;i++){
+                if(hear[i].checked==true){
+                    check=true;
+                }
+            }
+            if(check==false){
+                error_message+="Please select at least One way that you heard about this Event .\n";
+                for(var i=0;i<hear.length;i++){
+                    hear[i].checked=false;
+                }
+            }
+            check=false;
+            //get the email
+            var email_id=document.getElementById("email").value;
+            //check the email
+            if(!email_id.match(emailexp))
+            {
+                error_message+="\nPlease enter a valid Email ID. \n";
+                document.getElementById("email").value="";
+            }
+            //check if any errors happened
+            if(error_message.length==0){
+              //if no errors then send feedback to user and reload
+              //alert(messagetouser);
+              x=document.getElementById("errors");
+                x.innerHTML=messagetouser;
+                $( "#submit" ).click(function( event ) {
+	                  $( "#dialog_error" ).dialog( "open" );
+	                    event.preventDefault();
+                  });
+              error_message="";
+              $( "#reset" ).click();
+            }else{
+              //display the errors in the JUI dialog box
+                x=document.getElementById("errors");
+                x.innerHTML=error_message;
+                $( "#submit" ).click(function( event ) {
+	                  $( "#dialog_error" ).dialog( "open" );
+	                    event.preventDefault();
+                  });
+        error_message="";
+            }
+}
+
+function formclear(){
+    document.getElementById("average").innerHTML="";
+    document.getElementById("maximum").innerHTML="";
+    document.getElementById("fname").innerHTML="";
+    document.getElementById("lname").innerHTML="";
+    document.getElementById("address").innerHTML="";
+}
+</script>
+
+<button class="w3-green w3-button" id="submit"><input type="submit" id="submit" onclick="validateform_submit()"></button>
+<button class="w3-green w3-button"><input type="reset" id="reset" onclick="formclear()"></button></center>
+</div>
+</form>
+
+<div class=""><center><p>Link to go back to the CS Department Webpage</p><br><button class="w3-button w3-green"><a href="csdeptmain.html"alt="">Go Back</a></button></center></div>
+
+
+
+ <!---<div class="last w3-container" style="background:#333; height:200px;position:fixed"><div class="logo"><a href="cs.gmu.edu"><img src="gmu_white_logo.png" class="w3-border w3-padding image-logo" alt="Logo"></a></div></div>-->
+  <div class="fixed"><a href="https://www.gmu.edu/"><img src="C:\Users\Sahithi\OneDrive\Desktop\project -1(642)\George_Mason_University_logo.jpeg" class="image-logo" alt="Logo"></a></div>
+
+<style>
+/*Styling sheet for Survey.html and csmain.html*/
+html{
+    background-color: #006633;
+}
+body,table{
+    background-color:lightgrey;
+
+}
+h1 {
+	color:  #006633;
+	margin-left: 20px;
+	border: 5px solid #FFCC33;
+	border-style: solid;
+	box-shadow: 5px 10px 8px #a5a1b8;
+
+}
+/*custom styling for heading*/
+.heading
+{
+    color:  #006633;
+	margin-left: 20px;
+	border: 5px solid  #006633;
+	border-style: solid;
+	box-shadow: 5px 10px 8px #3a3361;
+}
+h2 {
+	color:  #FFCC33;
+	margin-left: 20px;
+	border: 5px solid #FFCC33;
+	border-style: solid;
+}
+
+ h3 {
+  color:   yellowgreen;
+  margin-left: 20px;
+  border: 5px solid #006633;
+  border-style: solid;
+  box-shadow: 5px 10px 8px #3a3361;}
+
+  /*-- Custom CSS Styling for fixed log*/
+ div.logo {
+ 	position: fixed;
+    bottom: 0;
+    right: 0;
+ }
+
+ .image-logo{
+    width:10%;
+    float:right;
+    margin-right: 11px;
+ }
+ .img-logo{
+    width:50%
+ }
+
+ .fixed {
+    position: fixed;
+    bottom: 0;
+    border: 3px solid #8AC007;
+    width:100%;
+    background:#333;
+  }
+  .w3-green, .w3-hover-green:hover {
+    color: #fff!important;
+    background-color: #4CAF50!important;
+    margin-bottom: 91px;
+}
+
+form{
+    background-color: green;
+}
+table{
+    background-color: white;
+}
+legend{
+    font-size:30px;
+}
+fieldset{
+    border-width: 5px;
+    border-color: yellow;
+}
+td{
+    width:40%
+}
+tr,p{
+    font-size:20px
+}
+input{
+    width:300px
+}
+
+.rb .cb{
+    width:0px;
+}
+
+/*styling for nav-bar*/
+.nav-wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: auto;
+	width: 100%;
+	height: 70px;
+	/*border-radius: 0 0 15px 15px;*/
+	padding: 0 25px;
+	z-index: 2;
+	background: #209639;
+	box-shadow: 0 1px 2px #fff;
+    color:#fff;
+}
+
+.logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	height: 60px;
+}
+
+.nav-tabs {
+	display: flex;
+	font-weight: 600;
+	font-size: 18px;
+	list-style: none;
+}
+
+.nav-tab:not(:last-child) {
+	padding: 10px 25px;
+	margin: 0;
+	border-right: 1px solid #000;
+}
+
+.nav-tab:last-child {
+	padding: 10px 0 0 25px;
+}
+
+.nav-tab,
+.menu-btn {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+	.nav-container {
+		position: fixed;
+		display: none;
+		overflow-y: auto;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		width: 280px;
+		height: 100%;
+		background: #fff;
+		box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.nav-tabs {
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: 80px;
+		width: 100%;
+	}
+
+	.nav-tab:not(:last-child) {
+		padding: 20px 25px;
+		margin: 0;
+		border-right: unset;
+		border-bottom: 1px solid #f5f5f5;
+	}
+
+	.nav-tab:last-child {
+		padding: 15px 25px;
+	}
+
+	.menu-btn {
+		position: relative;
+		display: block;
+		margin: 0;
+		width: 20px;
+		height: 15px;
+		cursor: pointer;
+		z-index: 2;
+		padding: 10px;
+		border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+	}
+
+	.menu-btn .menu {
+		display: block;
+		width: 100%;
+		height: 2px;
+		border-radius: 2px;
+		background: #111;
+	}
+
+	.menu-btn .menu:nth-child(2) {
+		margin-top: 4px;
+		opacity: 1;
+	}
+
+	.menu-btn .menu:nth-child(3) {
+		margin-top: 4px;
+	}
+
+	#menuToggle:checked + .menu-btn .menu {
+		transition: transform 0.2s ease;
+	}
+
+	#menuToggle:checked + .menu-btn .menu:nth-child(1) {
+		transform: translate3d(0, 6px, 0) rotate(45deg);
+	}
+
+	#menuToggle:checked + .menu-btn .menu:nth-child(2) {
+		transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+		opacity: 0;
+	}
+
+	#menuToggle:checked + .menu-btn .menu:nth-child(3) {
+		transform: translate3d(0, -6px, 0) rotate(-45deg);
+	}
+
+	#menuToggle:checked ~ .nav-container {
+		z-index: 1;
+		display: flex;
+		animation: menu-slide-left 0.3s ease;
+	}
+	@keyframes menu-slide-left {
+		0% {
+			transform: translateX(200px);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+}
+/*Custom css for li*/
+.lc{
+    font-size: 20px;
+}
+</style>
+
+
+</body>
+</html>

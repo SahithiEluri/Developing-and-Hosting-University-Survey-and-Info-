@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html style="background-color: black">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url("https://www.w3schools.com/howto/img_parallax.jpg");
+  min-height: 100%;
+}
+
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("https://api.time.com/wp-content/uploads/2021/02/laptop-home-office.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("https://images.pexels.com/photos/225232/pexels-photo-225232.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#Portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJECT</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"> <span class="w3-hide-small">SAHITHI</span> ELURI</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>COMPUTER SCIENCE STUDENT </em></p>
+  <p>
+Hello, my name is Sahithi Eluri. I am currently in my second semester at George Mason University in computer science from spring 2023. I am currently doing an on-campus part time at George Mason. I am familiar with various aspects of programming languages, but my major areas of expertise are in web design as well as various parts of software design and development.</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>SAHITHI ELURI</b></p><br>
+      <img src="mypic.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="mypic" width="350" height="200"> 
+    </div>
+    <br>
+<br>
+<br>
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Hi there! Myself  Sahithi, and I am currently pursuing a Master in Computer Science at George Mason University. I'm very eager to work as a developer in various computer science fields and facets.  As part of my undergraduate studies, I learned HTML, CSS, and JavaScript, all of which I applied to develop a simple web page. I obtained practical experience throughout my undergraduate studies by applying my knowledge to the development of a project on the "Parking Supervision System". Another study focuses on "Credit card fraud detection," which employs algorithms and machine learning approaches to identify credit card offenders. I have done a two-month internship with Youngminds Technology Solutions Pvt. Ltd. on "Data Science." As a result of the assignments assigned, I received real-world experience in Data Science from technical professionals and increased my technical and functional skills. I have an interest in fields such as Web Development, Software Engineering, and A.I.</p>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min"> 
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PROJECT</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center" style=" color: rgb(197, 178, 178); font-family: 'Helvetica Neue', sans-serif; font-size: 70px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; ">Homework Projects</h3>
+  <p class="w3-center"><em>Here are the Links to the websites for the Homework for SWE 642.<br> Click on the images to make them bigger</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+   <a href="csdeptmain.html" alt="csdept.html">
+      <img src="https://mason.gmu.edu/~rmohod/images/csdeptlogo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="csdept"></a>
+      <h3 style="color:rgb(197, 178, 178); font-family: 'Open Sans', sans-serif; font-size: 25x; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">CS Department Page</h3>
+      </div>
+
+    <div class="w3-col m3">
+     <a href="surveypage.html"alt="survey html"><img src="https://cezannehr.com/wp-content/uploads/2022/05/Pulse-survey.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt=" "></a>
+      <h3 style="color:rgb(197, 178, 178); font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">Survey Page</h3>
+      
+    
+  </div>
+  <div class="w3-col m3">
+      <img src="https://www.thestyleinspiration.com/wp-content/uploads/2020/11/Assignment.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt=" "> <h3 style="color:rgb(197, 178, 178); font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">Assignment 3</h3>
+    </div>
+
+  
+    <div class="w3-col m3">
+      <img src="https://www.w3schools.com/w3images/mac.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt=" ">
+      <h3 style="color:rgb(197, 178, 178); font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center;">Extra</h3>
+    </div>
+
+  </div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+<br>
+<br>
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h3 class="w3-center">Contact me </h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6GZANoC6JXnqqSNhG_B_WEMgYtBGWIiC2Dw&usqp=CAU" class="w3-image w3-round" style="width:100%">
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+     <i class="fa fa-briefcase fa-fw w3-margin-right w3-xlarge w3-hover-text-black"></i>Student<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Virginia, US<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +1 571-530-7127<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:seluri2@gmu.edu<br>
+      </div>
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
